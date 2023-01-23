@@ -13,15 +13,17 @@ readFile('./content/first.txt', 'utf8' ,(err,result)=>{
         }
         const second = result
         writeFile(
-            './content/result-async.txt')
-            `Here is the result : ${first}, ${second} `
-            ,(err,result)=>{
-                if(err){
+            './content/result-async.txt',
+            `Here is the result : ${first}, ${second}`,
+            '(err,result)=>{
+                if(err) {
                     console.log(err)
                     return;
                 }
-
+                console.log(result)
             }
+
+        }
     })
     console.log(result)
 })
